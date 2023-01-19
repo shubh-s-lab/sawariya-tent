@@ -1,4 +1,5 @@
 function calc() {
+    document.getElementById('output').innerHTML="";
     let o = document.getElementById('ot').value;
     let i = document.getElementById('in').value;
     let h = document.getElementById('ht').value;
@@ -24,12 +25,13 @@ function calc() {
             nwinp = Math.floor(nw);
             nwfp = nw - nwinp;
             if (nwfp >= 0.5) {
-                document.write(intPart + " " + nwinp + " <br>");
+                document.getElementById('output').innerHTML+=(`${intPart} ${nwinp} <br>`);
             } else {
                 nwinp = nwinp + 1;
-                document.write(intPart + " " + nwinp + " <br>");
+                document.getElementById('output').innerHTML+=(`${intPart} ${nwinp} <br>`);
             }
         }
+        return false;
     }
 
 }
